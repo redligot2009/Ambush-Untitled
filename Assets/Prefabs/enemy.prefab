@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114208240893588828}
   - component: {fileID: 114014898161101604}
   - component: {fileID: 50387229502363368}
+  - component: {fileID: 114164894453488226}
+  - component: {fileID: 114915322092946988}
   m_Layer: 10
   m_Name: enemy
   m_TagString: Untagged
@@ -39,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234816631114856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.5, y: -6.2, z: 0}
+  m_LocalPosition: {x: -23.06, y: -2.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -142,13 +144,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faabe15882e015a4fbd854143a03d2f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followRadius: 10
   maxDistance: 1
   moveSpeed: 170
   bounceX: 12
+  target: {fileID: 0}
+--- !u!114 &114164894453488226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234816631114856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dcd4c8393cf9964e9a47c45b66a7065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   playerMask:
     serializedVersion: 2
     m_Bits: 256
+  followRadius: 10
 --- !u!114 &114208240893588828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,7 +179,22 @@ MonoBehaviour:
   coll: {fileID: 0}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 512
   skinDist: 0.05
   horizontalRayCount: 4
   verticalRayCount: 4
+--- !u!114 &114915322092946988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234816631114856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da02579eaebdf546bd119fdbcf894bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 150
+  roamRadius: 10
+  maxDistance: 0.5
+  roamDelay: 4
